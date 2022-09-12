@@ -2,7 +2,7 @@
   "name": "test-workarround",
   "private": true,
   "version": "0.0.0",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -19,9 +19,12 @@
     "@commitlint/config-angular": "^17.1.0",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
     "@vitejs/plugin-react": "^2.1.0",
+    "eslint": "^8.23.1",
     "husky": "^8.0.1",
-    "typescript": "^4.6.4",
+    "typescript": "^4.8.3",
     "vite": "^3.1.0"
   }
 }
