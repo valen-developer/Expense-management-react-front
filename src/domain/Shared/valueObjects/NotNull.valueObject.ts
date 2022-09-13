@@ -1,3 +1,4 @@
+import { NullException } from "../exception/Null.exception";
 import { ValueObject } from "./ValueObject";
 
 export abstract class NotNullValueObjet<T> extends ValueObject<T> {
@@ -10,7 +11,7 @@ export abstract class NotNullValueObjet<T> extends ValueObject<T> {
   private checkIfValueIsNotNull(value: T, entityName: string): void {
     const isNull = value === null || value === undefined;
     if (isNull) {
-      throw new Error(`${entityName} cannot be null or undefined`);
+      throw new NullException(`${entityName} cannot be null or undefined`);
     }
   }
 }
