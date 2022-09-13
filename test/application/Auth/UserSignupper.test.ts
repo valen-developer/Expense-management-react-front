@@ -30,15 +30,13 @@ describe("User signup", () => {
 
     expect(signuper).toBeDefined();
 
-    const invalidEmailException = new InvalidEmailException();
-
     await expect(
       signuper.signup({
         email: "invalidEmail",
         password: "Validpassword1",
         passwordConfirmation: "Validpassword1",
       })
-    ).rejects.toEqual(invalidEmailException);
+    ).rejects.toEqual(new InvalidEmailException());
   });
 
   test("should not be able to signup with invalid password", async () => {
@@ -61,7 +59,6 @@ describe("User signup", () => {
 
     expect(signuper).toBeDefined();
 
-    // should throw error
     await expect(
       signuper.signup({
         email: "validemail@email.com",
