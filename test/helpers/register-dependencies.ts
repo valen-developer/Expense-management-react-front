@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import { container, Lifecycle } from "tsyringe";
 import { MockedAuthRepository } from "../infrastructure/Auth/MockedAuthRepository";
+import { MockedFriendRepository } from "../infrastructure/Friend/MockedFriendRepository";
 import { MockedGroupRepository } from "../infrastructure/Group/MockedGroupRepository";
 import { MockedUUIDGenerator } from "../infrastructure/Shared/MockedUUIDGenerator";
 
@@ -17,6 +18,14 @@ export const unitTestingDepsRegister = () => {
     "GroupRepository",
     {
       useClass: MockedGroupRepository,
+    },
+    { lifecycle: Lifecycle.Singleton }
+  );
+
+  container.register(
+    "FriendRepository",
+    {
+      useClass: MockedFriendRepository,
     },
     { lifecycle: Lifecycle.Singleton }
   );
