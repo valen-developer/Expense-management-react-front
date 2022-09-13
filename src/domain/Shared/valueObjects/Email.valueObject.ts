@@ -1,11 +1,11 @@
 import { InvalidEmailException } from "../../Auth/exceptions/InvalidEmail.exception";
-import { ValueObject } from "./ValueObject";
+import { NotNullValueObjet } from "./NotNull.valueObject";
 
-export class Email extends ValueObject<string> {
+export class Email extends NotNullValueObjet<string> {
   public static readonly invalidEmailMessage = "Invalid email";
 
   constructor(value: string) {
-    super(value);
+    super(value, "Email");
 
     if (!Email.isValidFormat(value)) {
       throw new InvalidEmailException();
