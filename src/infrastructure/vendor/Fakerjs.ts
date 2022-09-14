@@ -7,9 +7,13 @@ export class Fakerjs implements Faker {
     return faker.datatype.number(options);
   }
 
-  password(): string {
-    const regex = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/;
-    return faker.internet.password(undefined, undefined, regex);
+  password(options?: { regex: RegExp; len?: number }): string {
+    return faker.internet.password(
+      options?.len || 8,
+      true,
+      options?.regex,
+      "1A"
+    );
   }
 
   name(): string {

@@ -4,5 +4,5 @@ export abstract class Faker {
   abstract uuid(): string;
   abstract email(): string;
   abstract paragraph(max: number): string;
-  abstract password(): string;
+  abstract password(options?: { regex: RegExp; len?: number }): string;
 }
