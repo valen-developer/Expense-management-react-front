@@ -31,4 +31,8 @@ export class Fakerjs implements Faker {
   paragraph(max: number): string {
     return faker.lorem.paragraph(max);
   }
+
+  date(): Date {
+    return faker.date.recent();
+  }
 }
