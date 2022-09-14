@@ -69,12 +69,11 @@ describe("User Signupper", () => {
 });
 
 const registerDeps = () => {
-  console.log("Entra");
   const mockUserRepository = new Mock<UserRepository>()
-    .setup((instance) => instance.save(It.IsAny<User>() as User))
+    .setup((instance) => instance.signup(It.IsAny<User>() as User))
     .returns(Promise.resolve())
     .setup((instance) =>
-      instance.save(
+      instance.signup(
         It.Is<User>((user) => {
           const exist = user.email.value === "alreadyExist@email.com";
 
