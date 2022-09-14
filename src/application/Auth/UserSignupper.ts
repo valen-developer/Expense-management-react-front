@@ -1,5 +1,3 @@
-import "reflect-metadata";
-
 import { inject, injectable } from "tsyringe";
 
 import { UserSignupDto } from "../../domain/Auth/dtos/UserSignup.dto";
@@ -15,7 +13,7 @@ export class UserSignupper {
     @inject("UUIDGenerator") private uuidGenerator: UUIDGenerator
   ) {}
 
-  public async signup(params: UserSignupDto): Promise<User> {
+  public async signup(params: UserSignupDto): Promise<void> {
     this.checkPasswordConfirmation(
       params.password,
       params.passwordConfirmation
@@ -27,9 +25,7 @@ export class UserSignupper {
       password: params.password,
     });
 
-    await this.userRepository.save(user);
-
-    return user;
+    await this.userRepository.signup(user);
   }
 
   private checkPasswordConfirmation(
