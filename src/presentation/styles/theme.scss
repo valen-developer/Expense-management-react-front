@@ -1,0 +1,14 @@
+:root {
+  --background-dark: #060114;
+
+  --text-primary-dark: #fff;
+
+  --background-light: #fff;
+
+  --text-primary-light: #060114;
+}
+
+.theme-dark {
+  --background: var(--background-dark);
+  --text-primary: var(--text-primary-dark);
+}
