@@ -28,7 +28,7 @@ export class Fakerjs implements Faker {
     return faker.internet.email();
   }
 
-  paragraph(max: number): string {
+  paragraph(max = 3): string {
     return faker.lorem.paragraph(max);
   }
 
