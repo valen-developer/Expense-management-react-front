@@ -1,8 +1,8 @@
-import { ValueObject } from "./valueObject";
+export class List<T> {
+  protected value: T[] = [];
 
-export class List<T> extends ValueObject<T[]> {
   constructor(value?: T[]) {
-    super(value ?? []);
+    this.value = value ?? [];
   }
 
   public toArray(): T[] {
@@ -11,5 +11,9 @@ export class List<T> extends ValueObject<T[]> {
 
   public length(): number {
     return this.value.length;
+  }
+
+  public push(item: T): void {
+    this.value = [...this.value, item];
   }
 }

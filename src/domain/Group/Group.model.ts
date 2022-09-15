@@ -26,9 +26,13 @@ export class Group extends Dated {
       uuid: this.uuid.value,
       user: this.user.value,
       name: this.name.value,
-      friends: this.friends.value,
+      friends: this.friends.toArray(),
       createdAt: this.createdAt.value,
       updatedAt: this.updatedAt.value,
     };
+  }
+
+  public addFriend(friendUuid: string): void {
+    this.friends.push(friendUuid);
   }
 }
