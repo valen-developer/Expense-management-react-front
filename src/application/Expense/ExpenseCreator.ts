@@ -15,6 +15,7 @@ export class ExpenseCreator {
     const expense = new Expense({
       uuid: this.uuidGenerator.generate(),
       friend: params.friend,
+      group: params.group,
       amount: params.amount,
       description: params.description,
     });

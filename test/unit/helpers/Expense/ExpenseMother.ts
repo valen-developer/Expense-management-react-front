@@ -10,6 +10,7 @@ export class ExpenseMother {
     const defaultParams: ExpenseDto = {
       uuid: faker.uuid(),
       friend: faker.uuid(),
+      group: faker.uuid(),
       amount: faker.num({ min: 1, max: 1000 }),
       description: faker.paragraph(),
       createdAt: faker.date(),
@@ -24,10 +25,17 @@ export class ExpenseMother {
   ): ExpenseCreatorDto {
     const defaultParams: ExpenseCreatorDto = {
       friend: faker.uuid(),
+      group: faker.uuid(),
       amount: faker.num({ min: 1, max: 1000 }),
       description: faker.paragraph(),
     };
 
     return { ...defaultParams, ...params };
+  }
+
+  public static array(len = 3, params?: Partial<ExpenseDto>): Expense[] {
+    return Array(len)
+      .fill(null)
+      .map(() => this.random(params));
   }
 }
