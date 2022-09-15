@@ -1,0 +1,73 @@
+.btn {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 1px solid var(--text-primary);
+  color: var(--text-primary);
+  border-radius: var(--input-border-radius);
+
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.btn-primary {
+  border: 2px solid var(--primary);
+  background-color: var(--primary);
+  color: var(--background);
+  font-weight: bold;
+
+  &:hover {
+    background-color: var(--background);
+    color: var(--text-primary);
+  }
+}
+
+.btn-primary-invert {
+  border: 2px solid var(--primary);
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-weight: bold;
+
+  &:hover {
+    background-color: var(--primary);
+    color: var(--text-contrast-primary);
+  }
+}
+
+.btn-danger {
+  border: 2px solid var(--danger);
+  background-color: var(--danger);
+  color: var(--background);
+  font-weight: bold;
+
+  &:hover {
+    background-color: var(--background);
+    color: var(--text-danger);
+  }
+}
+
+.btn-danger-invert {
+  border: 2px solid var(--danger);
+  background-color: var(--background);
+  color: var(--danger);
+  font-weight: bold;
+
+  &:hover {
+    background-color: var(--danger);
+    color: var(--text-background);
+  }
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-small {
+  padding: 0.125rem 0.25rem;
+}
+.btn-large {
+  padding: 1rem 1.25rem;
+}
