@@ -22,6 +22,10 @@ export class PaymentMother {
     return new Payment({ ...defaultParams, ...params });
   }
 
+  public static array(len = 3, params?: Partial<PaymentDto>): Payment[] {
+    return Array.from({ length: len }, () => this.random(params));
+  }
+
   public static creatorDto(
     params?: Partial<PaymentCreatorDto>
   ): PaymentCreatorDto {
