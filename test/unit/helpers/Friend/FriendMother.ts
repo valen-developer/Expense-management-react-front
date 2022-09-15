@@ -1,6 +1,7 @@
 import { FriendDto } from "../../../../src/domain/Friend/dtos/Friend.dto";
 import { FriendCreatorDto } from "../../../../src/domain/Friend/dtos/FriendCreator.dto";
 import { Friend } from "../../../../src/domain/Friend/Friend.model";
+import { FriendName } from "../../../../src/domain/Friend/valueObjects/FriendName.valueObject";
 import { Fakerjs } from "../../../../src/infrastructure/vendor/Fakerjs";
 
 const faker = new Fakerjs();
@@ -10,7 +11,7 @@ export class FriendMother {
     params?: Partial<FriendCreatorDto>
   ): FriendCreatorDto {
     const defaultParams: FriendCreatorDto = {
-      name: faker.name(),
+      name: faker.name(FriendName.VALID_NAME_REGEX),
       user: faker.uuid(),
     };
 
@@ -20,7 +21,7 @@ export class FriendMother {
   public static random(params?: Partial<FriendDto>): Friend {
     const defaultParams: FriendDto = {
       uuid: faker.uuid(),
-      name: faker.name(),
+      name: faker.name(FriendName.VALID_NAME_REGEX),
       user: faker.uuid(),
     };
 

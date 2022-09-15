@@ -16,8 +16,15 @@ export class Fakerjs implements Faker {
     );
   }
 
-  name(): string {
-    return faker.name.fullName();
+  name(regex?: RegExp): string {
+    if (!regex) return faker.name.fullName();
+
+    let name = faker.name.firstName();
+    while (!regex.test(name)) {
+      name = faker.name.firstName();
+    }
+
+    return name;
   }
 
   uuid(): string {
