@@ -1,9 +1,9 @@
-import { FriendName } from "../../../../src/domain/Friend/valueObjects/FriendName.valueObject";
-import { PaymentDto } from "../../../../src/domain/Payment/dtos/Payment.dto";
-import { PaymentCreatorDto } from "../../../../src/domain/Payment/dtos/PaymentCreator.dto";
-import { Payment } from "../../../../src/domain/Payment/Payment.model";
-import { WithOptionals } from "../../../../src/domain/Shared/types/WithOptionals.type";
-import { Fakerjs } from "../../../../src/infrastructure/vendor/Fakerjs";
+import { FriendName } from "../../../src/domain/Friend/valueObjects/FriendName.valueObject";
+import { PaymentDto } from "../../../src/domain/Payment/dtos/Payment.dto";
+import { PaymentCreatorDto } from "../../../src/domain/Payment/dtos/PaymentCreator.dto";
+import { Payment } from "../../../src/domain/Payment/Payment.model";
+import { WithOptionals } from "../../../src/domain/Shared/types/WithOptionals.type";
+import { Fakerjs } from "../../../src/infrastructure/vendor/Fakerjs";
 
 const faker = new Fakerjs();
 

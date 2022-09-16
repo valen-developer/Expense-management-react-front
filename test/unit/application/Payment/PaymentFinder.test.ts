@@ -6,7 +6,7 @@ import { Payment } from "../../../../src/domain/Payment/Payment.model";
 import { Expression, It, Mock } from "moq.ts";
 import { PaymentRepository } from "../../../../src/domain/Payment/interfaces/PaymentRepository.interface";
 import { PaymentQuery } from "../../../../src/domain/Payment/dtos/PaymentQuery.dto";
-import { PaymentMother } from "../../helpers/Payment/PaymentMother";
+import { PaymentMother } from "../../../helpers/Payment/PaymentMother";
 
 const groupWithPaymentsUuid = "validGroupUuid";
 const groupWithoutPaymentsUuid = "invalidGroupUuid";

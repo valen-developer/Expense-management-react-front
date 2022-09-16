@@ -4,7 +4,7 @@ import { container } from "tsyringe";
 
 import { FriendGroupFinder } from "../../../../src/application/Group/FriendGroupFinder";
 import { GroupRepository } from "../../../../src/domain/Group/interfaces/GroupRepository.interface";
-import { FriendMother } from "../../helpers/Friend/FriendMother";
+import { FriendMother } from "../../../helpers/Friend/FriendMother";
 
 const groupWithFriendsUuid = "groupWithFriendsUuid";
 const groupWithoutFriendsUuid = "groupWithoutFriendsUuid";

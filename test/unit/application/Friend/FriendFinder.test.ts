@@ -7,7 +7,7 @@ import { FriendFinder } from "../../../../src/application/Friend/FriendFinder";
 import { FriendQuery } from "../../../../src/domain/Friend/dtos/FriendQuery.dto";
 import { NotFoundFriendException } from "../../../../src/domain/Friend/exceptions/NotFoundFriend.exception";
 import { FriendRepository } from "../../../../src/domain/Friend/interfaces/FriendRepository.interface";
-import { FriendMother } from "../../helpers/Friend/FriendMother";
+import { FriendMother } from "../../../helpers/Friend/FriendMother";
 
 const userHasFriendUuid = "user-uuid-has-friend";
 const userHasNotFriendUuid = "user-uuid-has-not-friend";

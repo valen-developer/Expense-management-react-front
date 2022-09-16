@@ -5,7 +5,7 @@ import { ExpenseFinder } from "../../../../src/application/Expense/ExpenseFinder
 import { Expense } from "../../../../src/domain/Expense/Expense.model";
 import { Expression, It, Mock } from "moq.ts";
 import { ExpenseRepository } from "../../../../src/domain/Expense/interfaces/ExpenseRepository.interface";
-import { ExpenseMother } from "../../helpers/Expense/ExpenseMother";
+import { ExpenseMother } from "../../../helpers/Expense/ExpenseMother";
 import { ExpensesQuery } from "../../../../src/domain/Expense/dtos/ExpensesQuery.dto";
 import { ExpenseDto } from "../../../../src/domain/Expense/dtos/Expense.dto";
 

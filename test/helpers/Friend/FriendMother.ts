@@ -1,8 +1,8 @@
-import { FriendDto } from "../../../../src/domain/Friend/dtos/Friend.dto";
-import { FriendCreatorDto } from "../../../../src/domain/Friend/dtos/FriendCreator.dto";
-import { Friend } from "../../../../src/domain/Friend/Friend.model";
-import { FriendName } from "../../../../src/domain/Friend/valueObjects/FriendName.valueObject";
-import { Fakerjs } from "../../../../src/infrastructure/vendor/Fakerjs";
+import { FriendDto } from "../../../src/domain/Friend/dtos/Friend.dto";
+import { FriendCreatorDto } from "../../../src/domain/Friend/dtos/FriendCreator.dto";
+import { Friend } from "../../../src/domain/Friend/Friend.model";
+import { FriendName } from "../../../src/domain/Friend/valueObjects/FriendName.valueObject";
+import { Fakerjs } from "../../../src/infrastructure/vendor/Fakerjs";
 
 const faker = new Fakerjs();
 

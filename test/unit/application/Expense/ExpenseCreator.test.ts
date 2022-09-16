@@ -8,7 +8,7 @@ import { Expense } from "../../../../src/domain/Expense/Expense.model";
 import { ExpenseRepository } from "../../../../src/domain/Expense/interfaces/ExpenseRepository.interface";
 import { NullException } from "../../../../src/domain/Shared/exceptions/Null.exception";
 import { DomainDate } from "../../../../src/domain/Shared/valueObjects/DomainDate.valueObject";
-import { ExpenseMother } from "../../helpers/Expense/ExpenseMother";
+import { ExpenseMother } from "../../../helpers/Expense/ExpenseMother";
 
 describe("Expense Creator", () => {
   beforeAll(() => {

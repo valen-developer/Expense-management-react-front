@@ -1,12 +1,12 @@
+import "reflect-metadata";
+
 import { Mock } from "moq.ts";
+import { container } from "tsyringe";
 
 import { UUIDGenerator } from "../../../src/domain/Shared/interfaces/UUIDGenerator.interface";
 import { Fakerjs } from "../../../src/infrastructure/vendor/Fakerjs";
-import { getContainer } from "./getContainer";
 
 export const unitDepsRegister = () => {
-  const container = getContainer();
-
   const faker = new Fakerjs();
 
   container.register("Faker", {

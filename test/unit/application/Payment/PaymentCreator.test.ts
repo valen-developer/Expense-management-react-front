@@ -9,7 +9,7 @@ import { PaymentRepository } from "../../../../src/domain/Payment/interfaces/Pay
 import { Payment } from "../../../../src/domain/Payment/Payment.model";
 import { DomainDate } from "../../../../src/domain/Shared/valueObjects/DomainDate.valueObject";
 import { NotFoundUserException } from "../../../../src/domain/User/exceptions/NotFoundUser.exception";
-import { PaymentMother } from "../../helpers/Payment/PaymentMother";
+import { PaymentMother } from "../../../helpers/Payment/PaymentMother";
 
 const invalidGroupUuid = "invalidGroupUuid";
 const invalidPayerUuid = "invalidPayerUuid";

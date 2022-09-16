@@ -7,7 +7,7 @@ import { GroupFinder } from "../../../../src/application/Group/GroupFinder";
 import { GroupQuery } from "../../../../src/domain/Group/dtos/GroupQuery.dto";
 import { NotFoundGroupException } from "../../../../src/domain/Group/exceptions/NotFoundGroup.exception";
 import { GroupRepository } from "../../../../src/domain/Group/interfaces/GroupRepository.interface";
-import { GroupMother } from "../../helpers/Group/GroupMother";
+import { GroupMother } from "../../../helpers/Group/GroupMother";
 
 const userHasGroupsUuid = "user-uuid-has-groups";
 const userHasNotGroupsUuid = "user-uuid-has-not-groups";

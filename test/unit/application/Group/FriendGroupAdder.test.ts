@@ -2,7 +2,7 @@ import { unitDepsRegister } from "../../helpers/unitDepsRegister";
 import { container } from "tsyringe";
 
 import { FriendGroupAdder } from "../../../../src/application/Group/FriendGroupAdder";
-import { GroupMother } from "../../helpers/Group/GroupMother";
+import { GroupMother } from "../../../helpers/Group/GroupMother";
 import { NotFoundGroupException } from "../../../../src/domain/Group/exceptions/NotFoundGroup.exception";
 import { Expression, It, Mock } from "moq.ts";
 import { GroupRepository } from "../../../../src/domain/Group/interfaces/GroupRepository.interface";

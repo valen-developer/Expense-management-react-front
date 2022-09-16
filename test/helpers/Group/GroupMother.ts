@@ -1,7 +1,7 @@
-import { GroupDto } from "../../../../src/domain/Group/dtos/Group.dto";
-import { GroupCreatorDto } from "../../../../src/domain/Group/dtos/GroupCreator.dto";
-import { Group } from "../../../../src/domain/Group/Group.model";
-import { Fakerjs } from "../../../../src/infrastructure/vendor/Fakerjs";
+import { GroupDto } from "../../../src/domain/Group/dtos/Group.dto";
+import { GroupCreatorDto } from "../../../src/domain/Group/dtos/GroupCreator.dto";
+import { Group } from "../../../src/domain/Group/Group.model";
+import { Fakerjs } from "../../../src/infrastructure/vendor/Fakerjs";
 
 const faker = new Fakerjs();
 

@@ -4,7 +4,7 @@ import { container } from "tsyringe";
 
 import { GroupCreator } from "../../../../src/application/Group/GroupCreator";
 import { NullException } from "../../../../src/domain/Shared/exceptions/Null.exception";
-import { GroupMother } from "../../helpers/Group/GroupMother";
+import { GroupMother } from "../../../helpers/Group/GroupMother";
 import { DomainDate } from "../../../../src/domain/Shared/valueObjects/DomainDate.valueObject";
 import { It, Mock } from "moq.ts";
 import { GroupRepository } from "../../../../src/domain/Group/interfaces/GroupRepository.interface";

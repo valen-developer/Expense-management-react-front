@@ -1,8 +1,8 @@
-import { ExpenseDto } from "../../../../src/domain/Expense/dtos/Expense.dto";
-import { ExpenseCreatorDto } from "../../../../src/domain/Expense/dtos/ExpenseCreatorDto.dto";
-import { Expense } from "../../../../src/domain/Expense/Expense.model";
-import { FriendName } from "../../../../src/domain/Friend/valueObjects/FriendName.valueObject";
-import { Fakerjs } from "../../../../src/infrastructure/vendor/Fakerjs";
+import { ExpenseDto } from "../../../src/domain/Expense/dtos/Expense.dto";
+import { ExpenseCreatorDto } from "../../../src/domain/Expense/dtos/ExpenseCreatorDto.dto";
+import { Expense } from "../../../src/domain/Expense/Expense.model";
+import { FriendName } from "../../../src/domain/Friend/valueObjects/FriendName.valueObject";
+import { Fakerjs } from "../../../src/infrastructure/vendor/Fakerjs";
 
 const faker = new Fakerjs();
 

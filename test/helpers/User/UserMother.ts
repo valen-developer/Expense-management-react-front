@@ -1,9 +1,9 @@
-import { SigninDto } from "../../../../src/domain/Auth/dtos/Signin.dto";
-import { UserSignupDto } from "../../../../src/domain/Auth/dtos/UserSignup.dto";
-import { UserDto } from "../../../../src/domain/User/dtos/User.dto";
-import { User } from "../../../../src/domain/User/User.model";
-import { UserPassword } from "../../../../src/domain/User/valueObjects/UserPassword.valueObject";
-import { Fakerjs } from "../../../../src/infrastructure/vendor/Fakerjs";
+import { SigninDto } from "../../../src/domain/Auth/dtos/Signin.dto";
+import { UserSignupDto } from "../../../src/domain/Auth/dtos/UserSignup.dto";
+import { UserDto } from "../../../src/domain/User/dtos/User.dto";
+import { User } from "../../../src/domain/User/User.model";
+import { UserPassword } from "../../../src/domain/User/valueObjects/UserPassword.valueObject";
+import { Fakerjs } from "../../../src/infrastructure/vendor/Fakerjs";
 
 const faker = new Fakerjs();
 

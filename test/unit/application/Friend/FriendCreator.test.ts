@@ -4,7 +4,7 @@ import { container } from "tsyringe";
 import { NullException } from "../../../../src/domain/Shared/exceptions/Null.exception";
 import { It, Mock } from "moq.ts";
 import { FriendCreator } from "../../../../src/application/Friend/FriendCreator";
-import { FriendMother } from "../../helpers/Friend/FriendMother";
+import { FriendMother } from "../../../helpers/Friend/FriendMother";
 import { Friend } from "../../../../src/domain/Friend/Friend.model";
 import { FriendNameInvalidException } from "../../../../src/domain/Friend/exceptions/FriendNameInvalid.exception";
 import { FriendNameAlreadyExistException } from "../../../../src/domain/Friend/exceptions/FriendNameAlreadyExist.exception";

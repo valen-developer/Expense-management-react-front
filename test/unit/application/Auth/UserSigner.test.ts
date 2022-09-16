@@ -10,7 +10,7 @@ import { InvalidEmailException } from "../../../../src/domain/Shared/exceptions/
 import { InvalidPasswordException } from "../../../../src/domain/User/exceptions/InvalidPassword.exception";
 import { UserRepository } from "../../../../src/domain/User/interfaces/UserRepository.interface";
 import { User } from "../../../../src/domain/User/User.model";
-import { UserMother } from "../../helpers/User/UserMother";
+import { UserMother } from "../../../helpers/User/UserMother";
 
 describe("User Signer", () => {
   beforeAll(() => {
