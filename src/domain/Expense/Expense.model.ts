@@ -1,3 +1,4 @@
+import { FriendName } from "../Friend/valueObjects/FriendName.valueObject";
 import { Dated } from "../Shared/Dated.model";
 import { WithOptionals } from "../Shared/types/WithOptionals.type";
 import { UUID } from "../Shared/valueObjects/UUID.valueObject";
@@ -8,6 +9,7 @@ import { ExpenseDescription } from "./valueObjects/ExpenseDescription.valueObjec
 export class Expense extends Dated {
   public readonly uuid: UUID;
   public readonly friend: UUID;
+  public readonly friendName: FriendName;
   public readonly group: UUID;
   public readonly amount: ExpenseAmount;
   public readonly description: ExpenseDescription;
@@ -18,6 +20,7 @@ export class Expense extends Dated {
 
     this.uuid = new UUID(params.uuid);
     this.friend = new UUID(params.friend);
+    this.friendName = new FriendName(params.friendName);
     this.group = new UUID(params.group);
     this.amount = new ExpenseAmount(params.amount);
     this.description = new ExpenseDescription(params.description);
@@ -27,6 +30,7 @@ export class Expense extends Dated {
     return {
       uuid: this.uuid.value,
       friend: this.friend.value,
+      friendName: this.friendName.value,
       group: this.group.value,
       amount: this.amount.value,
       description: this.description.value,

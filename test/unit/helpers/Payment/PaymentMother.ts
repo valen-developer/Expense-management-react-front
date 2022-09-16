@@ -1,3 +1,4 @@
+import { FriendName } from "../../../../src/domain/Friend/valueObjects/FriendName.valueObject";
 import { PaymentDto } from "../../../../src/domain/Payment/dtos/Payment.dto";
 import { PaymentCreatorDto } from "../../../../src/domain/Payment/dtos/PaymentCreator.dto";
 import { Payment } from "../../../../src/domain/Payment/Payment.model";
@@ -13,7 +14,9 @@ export class PaymentMother {
         uuid: faker.uuid(),
         group: faker.uuid(),
         payer: faker.uuid(),
+        payerName: faker.name(FriendName.VALID_NAME_REGEX),
         beneficiary: faker.uuid(),
+        beneficiaryName: faker.name(FriendName.VALID_NAME_REGEX),
         amount: faker.num({ min: 1, max: 1000 }),
         description: faker.paragraph(),
         date: faker.date(),
@@ -32,7 +35,9 @@ export class PaymentMother {
     const defaultParams: PaymentCreatorDto = {
       group: faker.uuid(),
       payer: faker.uuid(),
+      payerName: faker.name(FriendName.VALID_NAME_REGEX),
       beneficiary: faker.uuid(),
+      beneficiaryName: faker.name(FriendName.VALID_NAME_REGEX),
       amount: faker.num({ min: 1, max: 1000 }),
       description: faker.paragraph(),
       date: faker.date(),

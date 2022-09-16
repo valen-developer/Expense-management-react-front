@@ -1,6 +1,7 @@
 import { ExpenseDto } from "../../../../src/domain/Expense/dtos/Expense.dto";
 import { ExpenseCreatorDto } from "../../../../src/domain/Expense/dtos/ExpenseCreatorDto.dto";
 import { Expense } from "../../../../src/domain/Expense/Expense.model";
+import { FriendName } from "../../../../src/domain/Friend/valueObjects/FriendName.valueObject";
 import { Fakerjs } from "../../../../src/infrastructure/vendor/Fakerjs";
 
 const faker = new Fakerjs();
@@ -10,6 +11,7 @@ export class ExpenseMother {
     const defaultParams: ExpenseDto = {
       uuid: faker.uuid(),
       friend: faker.uuid(),
+      friendName: faker.name(FriendName.VALID_NAME_REGEX),
       group: faker.uuid(),
       amount: faker.num({ min: 1, max: 1000 }),
       description: faker.paragraph(),
@@ -25,6 +27,7 @@ export class ExpenseMother {
   ): ExpenseCreatorDto {
     const defaultParams: ExpenseCreatorDto = {
       friend: faker.uuid(),
+      friendName: faker.name(FriendName.VALID_NAME_REGEX),
       group: faker.uuid(),
       amount: faker.num({ min: 1, max: 1000 }),
       description: faker.paragraph(),
