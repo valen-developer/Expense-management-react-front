@@ -21,7 +21,9 @@ describe("Payment Creator", () => {
   });
 
   it("should create a payment given a group, payer and beneficiary valid", async () => {
-    const paymentCreatorDto = PaymentMother.creatorDto();
+    const paymentCreatorDto = PaymentMother.creatorDto({
+      date: new Date(),
+    });
 
     const paymentCreator = container.resolve<PaymentCreator>(PaymentCreator);
 
