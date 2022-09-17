@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { ChangeEvent, useEffect, useState } from "react";
 import { useSignin } from "./hooks/useSignin";
@@ -47,6 +47,8 @@ export const Signin = () => {
           value={password}
           onChange={handlePasswordChange}
         />
+
+        <Link to="/auth/signup">Don´t have and account? Signup</Link>
 
         <button role="button" type="submit">
           Signin

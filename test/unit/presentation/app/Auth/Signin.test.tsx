@@ -25,6 +25,14 @@ describe("Signin", () => {
     depsRegister();
   });
 
+  it("should find anchor for signup", () => {
+    RendererHelper.renderInRouter(Signin);
+
+    const signupAnchor = screen.getByText(/signup/i);
+
+    expect(signupAnchor).toBeInTheDocument();
+  });
+
   it("should sigin and get navigation to home", async () => {
     RendererHelper.renderInRouter(Signin, [
       {
