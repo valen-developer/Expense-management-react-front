@@ -1,3 +1,21 @@
 :root {
   --border-radius: 5px;
+
+  --linkColor: #414141;
+  --linkColorHover: #5e5e5e;
+}
+
+.link {
+  border-radius: var(--border-radius);
+  padding: 0.25rem 0.5rem;
+  background-color: var(--linkColor);
+
+  &:hover {
+    background-color: var(--linkColorHover);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-primary);
 }

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ChangeEvent, useState } from "react";
 import { useSignup } from "./hooks/useSignup";
 
@@ -64,7 +65,7 @@ export const Signup = () => {
           />
         </div>
 
-        <a href="/auth/signin">Do you have an account? Signin</a>
+        <Link to="/auth/signin">Do you have an account? Signin</Link>
 
         <button role="button" type="submit">
           Signup

@@ -9,14 +9,7 @@ import { UserRepository } from "../../../../../src/domain/User/interfaces/UserRe
 import { User } from "../../../../../src/domain/User/User.model";
 import { Signup } from "../../../../../src/presentation/app/Auth/Signup";
 import { UserMother } from "../../../../helpers/User/UserMother";
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
-const mockReturnValue = (method: () => any, value: any) => {
-  const parsedMethod = method as unknown as jest.MockedFunction<
-    (...args: string[]) => unknown
-  >;
-  parsedMethod.mockReturnValue(value);
-};
+import { RendererHelper } from "../../../../helpers/presentation/RendererHelper";
 
 describe("Signup", () => {
   beforeAll(() => {
@@ -24,7 +17,7 @@ describe("Signup", () => {
   });
 
   it("should find anchor for singin", () => {
-    render(<Signup />);
+    RendererHelper.renderInRouter(Signup, []);
 
     const singinAnchor = screen.getByText(/signin/i);
 
@@ -32,7 +25,7 @@ describe("Signup", () => {
   });
 
   it("should find text 'Singup'", () => {
-    render(<Signup />);
+    RendererHelper.renderInRouter(Signup, []);
 
     const singupText = screen.getByText(/signup/i);
 
@@ -41,7 +34,7 @@ describe("Signup", () => {
   });
 
   it("should signup", async () => {
-    render(<Signup />);
+    RendererHelper.renderInRouter(Signup, []);
 
     const signupDto = UserMother.signupDto({
       password: "ValidPassword123",

@@ -1,0 +1,13 @@
+.collection_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.375rem, 1fr));
+  gap: 0.5rem;
+}
+
+.collection_link {
+  width: 100%;
+
+  &:hover {
+    box-shadow: 0 0 10px var(--hover);
+  }
+}
