@@ -13,6 +13,13 @@ import { UserRepository } from "../../../../../src/domain/User/interfaces/UserRe
 import { SigninDto } from "../../../../../src/domain/Auth/dtos/Signin.dto";
 import { container } from "tsyringe";
 
+jest.mock("react-redux", () => {
+  return {
+    useSelector: jest.fn(),
+    useDispatch: jest.fn(),
+  };
+});
+
 describe("Signin", () => {
   beforeAll(() => {
     depsRegister();
