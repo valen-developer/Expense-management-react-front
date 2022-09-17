@@ -13,6 +13,7 @@ export class InMemoryUserRepository implements UserRepository {
   public signup(user: User): Promise<void> {
     return new Promise((resolve) => {
       this.users.push(user.toDto());
+      console.log(this.users);
       resolve();
     });
   }

@@ -3,6 +3,7 @@ import App from "./App";
 import { Auth } from "./Auth/Auth";
 import { authRoutes } from "./Auth/auth.router";
 import { ExpensesManager } from "./ExpensesManager/ExpensesManager";
+import { ExpensesManagerRouter } from "./ExpensesManager/expensesManager.router";
 
 export const appRouter = createBrowserRouter([
   {
@@ -17,14 +18,16 @@ export const appRouter = createBrowserRouter([
       {
         path: "/home",
         element: <ExpensesManager />,
+        children: ExpensesManagerRouter,
       },
+
       {
         path: "",
-        element: <Navigate to="/auth" />,
+        element: <Navigate to="/home" />,
       },
       {
         path: "*",
-        element: <Navigate to="/auth" />,
+        element: <Navigate to="/home" />,
       },
     ],
   },

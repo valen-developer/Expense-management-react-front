@@ -1,18 +1,24 @@
+import { Outlet, useNavigate } from "react-router-dom";
+
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
+import { useEffect } from "react";
 
 export const ExpensesManager = () => {
+  const navigate = useNavigate();
   const isAuthenticated = useSelector(
     (state: RootState) => state.auth.isAuthenticated
   );
 
+  useEffect(() => {
+    if (isAuthenticated) return;
+
+    navigate("/auth");
+  }, [isAuthenticated, navigate]);
+
   return (
     <div>
-      {isAuthenticated ? (
-        <div>Authenticated</div>
-      ) : (
-        <div>Not Authenticated</div>
-      )}
+      <Outlet />
     </div>
   );
 };
