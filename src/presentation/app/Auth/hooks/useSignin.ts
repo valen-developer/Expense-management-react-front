@@ -30,7 +30,7 @@ export const useSignin = () => {
         handleSetToken(token);
       })
       .catch((error: Error) => {
-        console.log(error);
+        error;
         setLoading(false);
         setError(error.message);
 

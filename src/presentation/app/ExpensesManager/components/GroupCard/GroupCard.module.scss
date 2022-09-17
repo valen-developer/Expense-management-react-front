@@ -1,0 +1,13 @@
+.card {
+  background-color: var(--background-card);
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+
+  padding: 0.25rem 1rem;
+  border-radius: var(--border-radius);
+}
+
+.card__header_title {
+  font-size: 1rem;
+}

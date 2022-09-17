@@ -20,7 +20,10 @@ export class InMemoryGroupRepository implements GroupRepository {
   ];
 
   create(group: Group): Promise<void> {
-    throw new Error("Method not implemented.");
+    return new Promise((resolve) => {
+      this.groups.push(group.toDto());
+      resolve();
+    });
   }
 
   public async filter(query: GroupQuery): Promise<GroupDto[]> {

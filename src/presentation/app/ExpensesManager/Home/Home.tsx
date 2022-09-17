@@ -1,13 +1,19 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
+import { AddGroupButton } from "../components/AddGroupModal/AddGroupModal";
 import { GroupCollection } from "../components/GroupsCollection/GroupCollection";
 
 import { useFetchGroups } from "../hooks/useFetchGroups";
 
+import styles from "./Home.module.scss";
+
 export const Home = () => {
-  const user = useSelector((state: RootState) => state.auth.user);
-  const { groups, handleFetchGroups } = useFetchGroups();
+  const { user, groups } = useSelector((state: RootState) => ({
+    user: state.auth.user,
+    groups: state.group.groups,
+  }));
+  const { handleFetchGroups } = useFetchGroups();
 
   useEffect(() => {
     if (!user) return;
@@ -20,7 +26,14 @@ export const Home = () => {
 
   return (
     <div>
-      <GroupCollection groups={groups} />
+      <div className={styles.home__header}>
+        <h2>{user?.email.value}</h2>
+        <AddGroupButton />
+      </div>
+
+      <div className={styles.home__content}>
+        <GroupCollection groups={groups} />
+      </div>
     </div>
   );
 };
