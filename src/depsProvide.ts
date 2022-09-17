@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import { container } from "tsyringe";
+import { container, Lifecycle } from "tsyringe";
 import { InMemoryUserRepository } from "./infrastructure/User/InMemoryUserRepository";
 import { UuidUUIDGenerator } from "./infrastructure/vendor/UuidUUIDGenerator";
 
@@ -8,7 +8,13 @@ export const appDepsProvide = () => {
     useClass: UuidUUIDGenerator,
   });
 
-  container.register("UserRepository", {
-    useClass: InMemoryUserRepository,
-  });
+  container.register(
+    "UserRepository",
+    {
+      useClass: InMemoryUserRepository,
+    },
+    {
+      lifecycle: Lifecycle.Singleton,
+    }
+  );
 };

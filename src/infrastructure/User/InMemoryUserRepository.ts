@@ -1,3 +1,4 @@
+import { singleton } from "tsyringe";
 import { SigninDto } from "../../domain/Auth/dtos/Signin.dto";
 import { UserSignerResponseDto } from "../../domain/Auth/dtos/UserSignerResponse.dto";
 import { UserDto } from "../../domain/User/dtos/User.dto";
@@ -5,6 +6,7 @@ import { NotFoundUserException } from "../../domain/User/exceptions/NotFoundUser
 import { UserRepository } from "../../domain/User/interfaces/UserRepository.interface";
 import { User } from "../../domain/User/User.model";
 
+@singleton()
 export class InMemoryUserRepository implements UserRepository {
   private users: UserDto[] = [];
 
