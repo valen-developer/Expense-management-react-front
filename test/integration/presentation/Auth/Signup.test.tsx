@@ -6,6 +6,7 @@ import { act } from "react-dom/test-utils";
 import { Signup } from "../../../../src/presentation/app/Auth/Signup";
 import { UserMother } from "../../../helpers/User/UserMother";
 import { appDepsProvide } from "../../../../src/depsProvide";
+import { RendererHelper } from "../../../helpers/presentation/RendererHelper";
 
 describe("Signup", () => {
   beforeAll(() => {
@@ -13,7 +14,7 @@ describe("Signup", () => {
   });
 
   it("should signup", async () => {
-    render(<Signup />);
+    RendererHelper.renderInRouter(Signup, []);
 
     const signupDto = UserMother.signupDto({
       password: "ValidPassword123",
