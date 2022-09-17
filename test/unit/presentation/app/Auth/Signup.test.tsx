@@ -10,14 +10,6 @@ import { User } from "../../../../../src/domain/User/User.model";
 import { Signup } from "../../../../../src/presentation/app/Auth/Signup";
 import { UserMother } from "../../../../helpers/User/UserMother";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
-const mockReturnValue = (method: () => any, value: any) => {
-  const parsedMethod = method as unknown as jest.MockedFunction<
-    (...args: string[]) => unknown
-  >;
-  parsedMethod.mockReturnValue(value);
-};
-
 describe("Signup", () => {
   beforeAll(() => {
     depsRegister();
