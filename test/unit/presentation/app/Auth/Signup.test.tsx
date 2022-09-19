@@ -27,10 +27,9 @@ describe("Signup", () => {
   it("should find text 'Singup'", () => {
     RendererHelper.renderInRouter(Signup, []);
 
-    const singupText = screen.getByText(/signup/i);
+    const singupText = screen.getAllByText(/signup/i);
 
-    expect(singupText).toBeInTheDocument();
-    screen.debug();
+    expect(singupText.length).toBeGreaterThan(0);
   });
 
   it("should signup", async () => {
