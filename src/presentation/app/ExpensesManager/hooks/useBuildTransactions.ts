@@ -20,7 +20,13 @@ export const useBuildTransactions = () => {
         amount: item.amount.value,
         date: date.toYYMMDD(),
         description: item.description.value,
+        type: hasPayment ? "payment" : "expense",
       };
+    });
+
+    // sort by date
+    transanctions.sort((a, b) => {
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
     });
 
     setTransactions(transanctions);

@@ -6,10 +6,12 @@ interface PaymentCollectionProps {
   payments: PaymentCardProps[];
 }
 
-export const PaymentCollection = (props: PaymentCollectionProps) => {
+export const PaymentCollection: React.FC<PaymentCollectionProps> = ({
+  payments,
+}) => {
   return (
     <div className={styles.collection}>
-      {props.payments.map((payment) => (
+      {payments.map((payment) => (
         <PaymentCard {...payment} />
       ))}
     </div>

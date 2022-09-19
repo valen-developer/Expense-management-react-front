@@ -6,6 +6,8 @@ import { GroupContext } from "../../Group/GroupContext";
 import { useAddFriendToGroup } from "../../hooks/useAddFriendToGroup";
 import { useFetchFriends } from "../../hooks/useFetchFriends";
 
+import styles from "./AddFriendToGroup.module.scss";
+
 export const AddFriendToGroup = () => {
   const { user } = useSelector((state: RootState) => state.auth);
 
@@ -50,8 +52,11 @@ export const AddFriendToGroup = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <select name="friend" onChange={handleFriendChange}>
+          <option value="" disabled selected>
+            Choose friend
+          </option>
           {friends.map((friend) => (
             <option key={friend.uuid.value} value={friend.uuid.value}>
               {friend.name.value}

@@ -1,0 +1,28 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.navbar_brand {
+  & h1 {
+    font-size: 1rem;
+  }
+}
+
+.navbar_routes {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.navLink {
+  background-color: var(--background-card);
+  border-radius: var(--border-radius);
+  padding: 0.25rem 0.5rem;
+  color: var(--text-secondary);
+}
+
+.active {
+  color: var(--text-primary);
+}

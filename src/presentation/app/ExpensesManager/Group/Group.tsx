@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Expense } from "../../../../domain/Expense/Expense.model";
 import { Friend } from "../../../../domain/Friend/Friend.model";
 import { Group as GroupDomain } from "../../../../domain/Group/Group.model";
@@ -13,6 +13,8 @@ import { useFetchFriendsByGroup } from "../hooks/useFetchFriendsByGroup";
 import { useFetchGroups } from "../hooks/useFetchGroups";
 import { useFetchPayments } from "../hooks/useFetchPayments";
 import { GroupContext } from "./GroupContext";
+
+import styles from "./Group.module.scss";
 
 export const Group = () => {
   const { uuid } = useParams<{ uuid: string }>();
@@ -83,8 +85,41 @@ export const Group = () => {
         addPaymentToGroup,
       }}
     >
-      <GroupOptionsButton />
-      <PaymentCollection payments={transactions} />
+      <div className={styles.group_wrapper}>
+        <div className={styles.header}>
+          <div className={styles.header__title}>
+            <Link className="link" to="..">
+              <i className="fas fa-arrow-left"></i>
+            </Link>
+
+            <h1>{group?.name.value}</h1>
+            <GroupOptionsButton />
+          </div>
+
+          <div className={styles.header__imageContainer}>
+            <img
+              src="/src/presentation/assets/images/group.png"
+              alt="group image"
+            />
+          </div>
+
+          <div className={styles.header__general_information}>
+            <div className={styles.header__operationContainer}>
+              <i className="fas fa-exchange-alt"></i>
+              <span>{transactions.length} Transactions</span>
+            </div>
+
+            <div className={styles.header__operationContainer}>
+              <i className="fas fa-user-friends"></i>
+              <span>{friends.length} Friends</span>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.collection_container}>
+          <PaymentCollection payments={transactions} />
+        </div>
+      </div>
     </GroupContext.Provider>
   );
 };

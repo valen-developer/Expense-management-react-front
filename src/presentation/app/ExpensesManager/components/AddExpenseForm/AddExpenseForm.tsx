@@ -1,7 +1,9 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { UUID } from "../../../../../domain/Shared/valueObjects/UUID.valueObject";
 import { GroupContext } from "../../Group/GroupContext";
 import { useExpenseCreation } from "../../hooks/useExpenseCreation";
+
+import styles from "./AddExpenseForm.module.scss";
 
 export const AddExpenseForm = () => {
   const { group, groupFriends, addExpenseToGroup } = useContext(GroupContext);
@@ -50,20 +52,24 @@ export const AddExpenseForm = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <input
           type="text"
           name="description"
+          placeholder="Description"
           onChange={handleDescriptionChange}
         />
         <input
           type="number"
           name="amount"
+          placeholder="Amount"
           min="0"
           onChange={handleAmountChange}
         />
         <select name="payer" onChange={handleFriendChange}>
-          <option value="" disabled selected></option>
+          <option value="" disabled selected>
+            Choose friend
+          </option>
           {groupFriends.map((friend) => (
             <option value={friend.uuid.value}>{friend.name.value}</option>
           ))}

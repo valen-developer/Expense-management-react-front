@@ -18,10 +18,6 @@ export const useFetchFriends = () => {
     friendFinder
       .filter(query)
       .then((friends) => {
-        console.log(
-          "🚀 ~ file: useFetchFriends.ts ~ line 21 ~ .then ~ friends",
-          friends
-        );
         setLoading(false);
         setFriends(friends);
       })

@@ -27,7 +27,6 @@ export const Home = () => {
 
   return (
     <div>
-      <Link to="/home/friends">Friends</Link>
       <div className={styles.home__header}>
         <h2>{user?.email.value}</h2>
         <AddGroupButton />

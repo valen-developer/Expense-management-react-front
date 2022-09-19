@@ -6,9 +6,12 @@
 }
 
 .link {
+  border: none;
   border-radius: var(--border-radius);
   padding: 0.25rem 0.5rem;
   background-color: var(--linkColor);
+  color: var(--text-primary);
+  height: min-content;
 
   &:hover {
     background-color: var(--linkColorHover);
@@ -17,5 +20,14 @@
 
 a {
   text-decoration: none;
+  color: var(--text-primary);
+}
+
+input {
+  background-color: var(--input-background);
+  border-radius: var(--border-radius);
+  border: none;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
   color: var(--text-primary);
 }

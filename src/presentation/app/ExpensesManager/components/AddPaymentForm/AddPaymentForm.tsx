@@ -4,6 +4,8 @@ import { UUID } from "../../../../../domain/Shared/valueObjects/UUID.valueObject
 import { GroupContext } from "../../Group/GroupContext";
 import { useAddPayment } from "../../hooks/useAddPayment";
 
+import styles from "./AddPaymentForm.module.scss";
+
 export const AddPaymentForm = () => {
   const { group, groupFriends, addPaymentToGroup } = useContext(GroupContext);
 
@@ -75,7 +77,7 @@ export const AddPaymentForm = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <input
           type="text"
           data-testid="description"

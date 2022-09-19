@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import { ChangeEvent, useState } from "react";
 import { useSignup } from "./hooks/useSignup";
 
+import styles from "./Auth.module.scss";
+
 export const Signup = () => {
-  const { handleSignup, isSuccess } = useSignup();
+  const { handleSignup, isSuccess, error } = useSignup();
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -30,9 +32,12 @@ export const Signup = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <div className={styles.auth__header}>
+        <h1>Signup</h1>
+      </div>
+
+      <form onSubmit={handleSubmit} className={styles.auth_form}>
         <div className="form-input">
-          <label htmlFor="email">Email</label>
           <input
             type="email"
             name="email"
@@ -67,11 +72,16 @@ export const Signup = () => {
 
         <Link to="/auth/signin">Do you have an account? Signin</Link>
 
-        <button role="button" type="submit">
+        <button
+          role="button"
+          type="submit"
+          className="btn btn-primary btn-block"
+        >
           Signup
         </button>
 
         {isSuccess && <p>Signup successfully</p>}
+        {error && <p>{error}</p>}
       </form>
     </div>
   );

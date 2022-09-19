@@ -5,13 +5,15 @@ export interface PaymentCardProps {
   description: string;
   amount: number;
   date: string;
+  type: "expense" | "payment";
 }
 
 export const PaymentCard = (props: PaymentCardProps) => {
-  const { title, description, amount, date } = props;
+  const { title, description, amount, date, type } = props;
+  const typeClass = type === "expense" ? styles.expense : styles.payment;
 
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} ${typeClass}`}>
       <div className={styles.card__header}>
         <span>{title}</span>
         <span className={styles.card__header_amount}>{`${amount}€`}</span>

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { ModalContainer } from "../../../Shared/ModalContainer/ModalContainer";
 
+import styles from "./GroupOptionItem.module.scss";
+
 interface GroupOptionItemProps {
   title: string;
   children: React.ReactNode;
@@ -14,7 +16,9 @@ export const GroupOptionItem = (props: GroupOptionItemProps) => {
 
   return (
     <div>
-      <button onClick={() => handleShow()}>{props.title}</button>
+      <button onClick={() => handleShow()} className={`${styles.button} link`}>
+        {props.title}
+      </button>
       <ModalContainer show={show} handleClose={handleClose}>
         {props.children}
       </ModalContainer>

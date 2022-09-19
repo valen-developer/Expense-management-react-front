@@ -8,8 +8,6 @@ export class Balance {
 
   constructor(params: BalanceDto) {
     this.friendsBalance = new FriendBalanceList(params.friendsBalance);
-
-    this.suggestTransactionsToPutZeroBalance();
   }
 
   public suggestTransactionsToPutZeroBalance(): Transaction[] {
