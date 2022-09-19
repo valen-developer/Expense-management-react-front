@@ -114,7 +114,6 @@ describe("Group", () => {
   //   expect(screen.getByText(payment.amount.value)).toBeInTheDocument();
   //   expect(screen.getByText(payment.date.toYYMMDD())).toBeInTheDocument();
 
-  //   screen.debug();
   // });
 
   it("should can see a balance", async () => {
@@ -129,6 +128,13 @@ describe("Group", () => {
         },
       });
 
+      await new Promise((resolve) => setTimeout(resolve, 0));
+    });
+
+    const openOptionsButton = screen.getByTestId(/open-options/i);
+
+    await act(async () => {
+      fireEvent.click(openOptionsButton);
       await new Promise((resolve) => setTimeout(resolve, 0));
     });
 
@@ -160,6 +166,13 @@ describe("Group", () => {
       await new Promise((resolve) => setTimeout(resolve, 0));
     });
 
+    const openOptionsButton = screen.getByTestId(/open-options/i);
+
+    await act(async () => {
+      fireEvent.click(openOptionsButton);
+      await new Promise((resolve) => setTimeout(resolve, 0));
+    });
+
     const seeBalanceButton = screen.getByText(/see balance/i);
 
     await act(async () => {
@@ -174,8 +187,6 @@ describe("Group", () => {
       expect(screen.getByText(s.receiver.name.value)).toBeInTheDocument();
       expect(screen.getByText(s.amount.toString())).toBeInTheDocument();
     });
-
-    screen.debug();
   });
 });
 
