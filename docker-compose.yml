@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  webapp:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: expense-webapp
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/:/etc/nginx/conf.d/
+    restart: always
