@@ -29,18 +29,27 @@ export class InMemoryGroupRepository implements GroupRepository {
   public async filter(query: GroupQuery): Promise<GroupDto[]> {
     return new Promise((resolve) => {
       const groups = this.groups.filter((group) => {
-        // TODO: Add more filters
-        // if (query.user_equals) {
-        //   return group.user === query.user_equals;
-        // }
-        return true;
+        const { uuid_equals } = query;
+        const hasUser = uuid_equals ? group.uuid === uuid_equals : true;
+
+        return hasUser;
       });
       resolve(groups);
     });
   }
+
   addFriend(params: AddFriendRepositoryDto): Promise<void> {
-    throw new Error("Method not implemented.");
+    const group = this.groups.find((group) => group.uuid === params.groupUuid);
+
+    if (!group) {
+      throw new Error("Group not found");
+    }
+
+    group.friends.push(params.friendUuid);
+
+    return Promise.resolve();
   }
+
   findFriends(groupUuid: string): Promise<FriendDto[]> {
     throw new Error("Method not implemented.");
   }

@@ -11,12 +11,15 @@ export class FriendGroupAdder {
 
   public async add(params: FriendGroupAdderDto): Promise<Group> {
     const { group, friendUuid } = params;
+
+    group.addFriend(friendUuid);
+
     await this.groupRepository.addFriend({
       groupUuid: group.uuid.value,
       friendUuid,
     });
 
-    group.addFriend(friendUuid);
+    console.log(group);
 
     return group;
   }

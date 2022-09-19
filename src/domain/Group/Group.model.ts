@@ -2,6 +2,7 @@ import { Dated } from "../Shared/Dated.model";
 import { WithOptionals } from "../Shared/types/WithOptionals.type";
 import { UUID } from "../Shared/valueObjects/UUID.valueObject";
 import { GroupDto } from "./dtos/Group.dto";
+import { AlreadyHaveFriendException } from "./exceptions/AlreadyHaveFriend.exception";
 import { GroupFriendList } from "./valeuObjects/GroupFriendList.valueObjet";
 import { GroupName } from "./valeuObjects/GroupName.valueObject";
 
@@ -33,6 +34,9 @@ export class Group extends Dated {
   }
 
   public addFriend(friendUuid: string): void {
+    const exists = this.friends.exists(friendUuid);
+    if (exists) throw new AlreadyHaveFriendException();
+
     this.friends.push(friendUuid);
   }
 }

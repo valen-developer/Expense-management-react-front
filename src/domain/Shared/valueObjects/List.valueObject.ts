@@ -16,4 +16,8 @@ export class List<T> {
   public push(item: T): void {
     this.value = [...this.value, item];
   }
+
+  public exists(item: T): boolean {
+    return this.value.includes(item);
+  }
 }
