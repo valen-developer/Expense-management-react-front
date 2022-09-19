@@ -29,11 +29,9 @@ export const useFetchFriendsByGroup = () => {
       return friend;
     })
       .then((array) => {
-        console.log(array);
         setFriends(array);
       })
       .catch((error) => {
-        console.log(error);
         if (error instanceof Error) {
           return setError(error.message);
         }

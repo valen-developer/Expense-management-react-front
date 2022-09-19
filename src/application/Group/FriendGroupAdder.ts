@@ -19,8 +19,6 @@ export class FriendGroupAdder {
       friendUuid,
     });
 
-    console.log(group);
-
     return group;
   }
 }

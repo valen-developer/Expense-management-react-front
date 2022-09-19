@@ -36,7 +36,6 @@ export const AddFriendToGroup = () => {
   const [selectedFriends, setSelectedFriends] = useState<Nullable<string>>();
 
   const handleFriendChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    console.log(event.target.value);
     setSelectedFriends(event.target.value);
   };
 
@@ -44,8 +43,6 @@ export const AddFriendToGroup = () => {
     event.preventDefault();
 
     if (!group || !selectedFriends) return;
-
-    console.log(selectedFriends);
 
     handleAddFriendToGroup(selectedFriends, group);
   };
