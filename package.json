@@ -11,9 +11,10 @@
     "commit": "./commit.sh",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
-    "test:dev": "jest --watchAll"
+    "test:dev": "jest --watchAll --detectOpenHandles"
   },
   "dependencies": {
+    "@floating-ui/react-dom": "^1.0.0",
     "@reduxjs/toolkit": "^1.8.5",
     "nanoid": "^4.0.0",
     "react": "^18.2.0",
