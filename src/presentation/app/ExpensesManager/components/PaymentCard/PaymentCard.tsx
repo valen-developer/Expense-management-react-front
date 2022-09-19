@@ -13,8 +13,8 @@ export const PaymentCard = (props: PaymentCardProps) => {
   return (
     <div className={styles.card}>
       <div className={styles.card__header}>
-        <h3>{title}</h3>
-        <span className={styles.card__header_amount}>{`${amount} €`}</span>
+        <span>{title}</span>
+        <span className={styles.card__header_amount}>{`${amount}€`}</span>
       </div>
 
       <div className={styles.card__body}>
