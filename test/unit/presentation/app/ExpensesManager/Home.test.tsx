@@ -67,8 +67,6 @@ describe("Home", () => {
 
     const groupCard = screen.getByText(/my new group/i);
     expect(groupCard).toBeInTheDocument();
-
-    screen.debug();
   });
 
   it("should see the name of groups", async () => {

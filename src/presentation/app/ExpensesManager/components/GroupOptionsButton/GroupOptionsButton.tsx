@@ -22,7 +22,12 @@ export const GroupOptionsButton = () => {
 
   return (
     <div className={styles.option__wrapper}>
-      <button className="link" onClick={() => handleToggle()} ref={reference}>
+      <button
+        className="link"
+        onClick={() => handleToggle()}
+        ref={reference}
+        data-testid="open-options"
+      >
         <i className="fas fa-ellipsis-v"></i>
       </button>
 

@@ -57,8 +57,6 @@ describe("Signin", () => {
     });
 
     expect(screen.getByText(/home/i)).toBeInTheDocument();
-
-    screen.debug();
   });
 });
 
